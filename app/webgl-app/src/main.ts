@@ -1,8 +1,6 @@
 import './style.css'
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+const c = document.getElementById<HTMLCanvasElement>('canvas')
 
-app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+c?.width = 500
+c?.height = 300
