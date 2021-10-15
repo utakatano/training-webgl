@@ -1,6 +1,19 @@
 import './style.css'
 
-const c = document.getElementById<HTMLCanvasElement>('canvas')
+const init = () => {
+  const c = <HTMLCanvasElement | null>document.getElementById('canvas')
 
-c?.width = 500
-c?.height = 300
+  if (c === null) return
+  c.width = 500
+  c.height = 300
+
+  const gl = c.getContext('webgl')
+
+  if (gl === null) return
+
+  gl.clearColor(0.0, 0.0, 0.0, 1.0)
+  gl.clear(gl.COLOR_BUFFER_BIT)
+}
+
+init()
+
